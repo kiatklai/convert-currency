@@ -1,3 +1,4 @@
+import './CurrencyComponent.css'
 const CurrencyComponent=()=>{
   return(
     <div className="currency">

@@ -3,7 +3,7 @@ import money from './img/money.png'
 function App() {
   return (
     <div>
-      <img src={money} alt="logo"/>
+      <img src={money} alt="logo" className="money-img"/>
       <h1>為替レートアプリ</h1>
       <div className="container">
         <CurrencyComponent/>
