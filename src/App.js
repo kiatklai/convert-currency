@@ -28,6 +28,16 @@ function App() {
     setExchangeRate(data.rates[toCurrency])
   })
   },[fromCurrency,toCurrency])
+
+  const amountFromCurrency=(e)=>{
+    setAmount(e.target.value)
+    setCheckFormCurrency(true)
+  }
+  const amountToCurrency=(e)=>{
+    setAmount(e.target.value)
+    setCheckFormCurrency(false)
+  }
+
   return (
     <div>
       <img src={money} alt="logo" className="money-img"/>
@@ -38,6 +48,7 @@ function App() {
           selectCurrency={fromCurrency}
           changeCurrency={(e)=>setFromCurrency(e.target.value)}
           amount= {fromAmount}
+          onChangeAmount= {amountFromCurrency}
         />
         <div className="equal">=</div>
         <CurrencyComponent 
@@ -45,6 +56,7 @@ function App() {
           selectCurrency={toCurrency}
           changeCurrency={(e)=>setToCurrency(e.target.value)}
           amount= {toAmount}
+          onChangeAmount= {amountToCurrency}
         />
       </div>
     </div>
