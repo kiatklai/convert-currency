@@ -6,12 +6,17 @@ function App() {
   const [currencyChoice,setCurrencyChoice] = useState([])
   const [fromCurrency,setFromCurrency] = useState("JPY")
   const [toCurrency,setToCurrency] = useState("THB")
+
+  const [amount,setAmount] = useState(1)
+  const [exchangeRate,setExchangeRate] = useState(0)
   
   useEffect(()=>{
-    const url = `https://api.exchangerate-api.com/v4/latest/USD`
+    const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
     fetch(url).then(res=>res.json())
-    .then(data=>setCurrencyChoice([...Object.keys(data.rates)]))
-  },[])
+    .then(data=>{setCurrencyChoice([...Object.keys(data.rates)])
+    setExchangeRate(data.rates[toCurrency])
+  })
+  },[fromCurrency,toCurrency])
   return (
     <div>
       <img src={money} alt="logo" className="money-img"/>
