@@ -15,10 +15,10 @@ function App() {
 
   if(checkFormCurrency){
     fromAmount = amount
-    toAmount=(amount*exchangeRate).toFixed(2)
+    toAmount=(amount*exchangeRate).toFixed(3)
   }else{
     toAmount = amount
-    fromAmount=(amount/exchangeRate).toFixed(2)
+    fromAmount=(amount/exchangeRate).toFixed(3)
   }
   
   useEffect(()=>{
