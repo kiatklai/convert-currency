@@ -5,7 +5,7 @@ function App() {
 
   const [currencyChoice,setCurrencyChoice] = useState([])
   const [fromCurrency,setFromCurrency] = useState("JPY")
-  const [toCurrency,setToCurrency] = useState("THB")
+  const [toCurrency,setToCurrency] = useState("USD")
 
   const [amount,setAmount] = useState(1)
   const [exchangeRate,setExchangeRate] = useState(0)
