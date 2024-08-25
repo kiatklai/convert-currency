@@ -41,7 +41,7 @@ function App() {
   return (
     <div>
       <img src={money} alt="logo" className="money-img"/>
-      <h1>為替レートアプリ</h1>
+      <h1>為替レート計算ツール</h1>
       <div className="container">
         <CurrencyComponent 
           currencyChoice={currencyChoice} 
